@@ -1,0 +1,135 @@
+.login-container {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif;
+  
+    .left-section {
+      flex: 1;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      padding: 2rem;
+  
+      h1 {
+        font-size: 3rem;
+        span {
+          color: #ffd700;
+        }
+      }
+  
+      .wave {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 120px;
+        background: url('https://svgshare.com/i/uxU.svg') repeat-x;
+        background-size: cover;
+      }
+    }
+  
+    .right-section {
+      flex: 1;
+      background: #f7f7f7;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 4rem;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+  
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        color: #333;
+      }
+  
+      form {
+        .form-group {
+          margin-bottom: 1.5rem;
+  
+          label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+          }
+  
+          input {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            transition: border-color 0.3s;
+  
+            &:focus {
+              border-color: #667eea;
+              outline: none;
+            }
+          }
+        }
+  
+        .error-message {
+          color: #e53e3e;
+          background: #fff5f5;
+          border: 1px solid #feb2b2;
+          padding: 0.75rem;
+          border-radius: 6px;
+          margin-bottom: 1rem;
+        }
+  
+        .login-button {
+          width: 100%;
+          padding: 0.75rem;
+          background-color: #667eea;
+          border: none;
+          border-radius: 6px;
+          color: #fff;
+          font-weight: bold;
+          cursor: pointer;
+          transition: background-color 0.3s;
+  
+          &:hover {
+            background-color: #5a67d8;
+          }
+  
+          &:disabled {
+            background-color: #a0aec0;
+            cursor: not-allowed;
+          }
+        }
+      }
+  
+      .signup-link {
+        margin-top: 1.5rem;
+        text-align: center;
+  
+        a {
+          color: #667eea;
+          text-decoration: none;
+          font-weight: bold;
+  
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      flex-direction: column;
+  
+      .left-section, .right-section {
+        flex: none;
+        width: 100%;
+        padding: 2rem;
+      }
+  
+      .left-section {
+        display: none; // اختیاری: برای موبایل پنهان کنیم
+      }
+    }
+  }
+  

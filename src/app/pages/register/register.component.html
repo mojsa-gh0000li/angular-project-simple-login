@@ -1,0 +1,40 @@
+<div class="register-container">
+  <div class="left-section">
+    <h1>به جمع ما خوش اومدی!</h1>
+    <p>با ثبت‌نام سریع، به امکانات بیشتری دسترسی پیدا کن.</p>
+  </div>
+
+  <div class="right-section">
+    <h2>فرم ثبت‌نام</h2>
+    <form (ngSubmit)="register()">
+      <div class="form-group">
+        <label for="username">نام کاربری:</label>
+        <input [(ngModel)]="username" name="username" type="text" required />
+      </div>
+
+      <div class="form-group">
+        <label for="password">رمز عبور:</label>
+        <input [(ngModel)]="password" name="password" type="password" required />
+      </div>
+
+      <div class="form-group">
+        <label for="confirmPassword">تأیید رمز عبور:</label>
+        <input [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required />
+      </div>
+
+      @if (password !== confirmPassword && confirmPassword.length > 0) {
+        <div class="error-message">
+          رمز عبور و تکرار آن یکسان نیست!
+        </div>
+      }
+
+      @if (errorMessage) {
+        <div class="error-message">
+          {{ errorMessage }}
+        </div>
+      }
+
+      <button type="submit">ثبت‌نام</button>
+    </form>
+  </div>
+</div>

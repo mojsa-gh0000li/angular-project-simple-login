@@ -1,0 +1,113 @@
+@import url('https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css');
+
+:host {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  font-family: 'Vazir', sans-serif;
+  direction: rtl;
+}
+
+.register-container {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+  min-height: 500px;
+}
+
+.left-section {
+  flex: 1;
+  background: linear-gradient(180deg, #764ba2, #667eea);
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+.right-section {
+  flex: 1;
+  padding: 2.5rem;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #333;
+    font-weight: bold;
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        margin-bottom: 0.5rem;
+        font-weight: bold;
+        color: #555;
+      }
+
+      input {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        transition: border-color 0.3s ease;
+
+        &:focus {
+          border-color: #667eea;
+          outline: none;
+        }
+      }
+
+      &.full-width {
+        grid-column: span 2;
+      }
+    }
+
+    .error-message {
+      grid-column: span 2;
+      background-color: #fff5f5;
+      border: 1px solid #feb2b2;
+      padding: 0.75rem;
+      border-radius: 6px;
+      color: #e53e3e;
+      font-size: 0.9rem;
+    }
+
+    button {
+      grid-column: span 2;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      background-color: #667eea;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #5a67d8;
+      }
+    }
+  }
+}

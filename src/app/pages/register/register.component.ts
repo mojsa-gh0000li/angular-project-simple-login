@@ -3,13 +3,14 @@ import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-register',
+  standalone: true,
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss'],
-  standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class RegisterComponent {
   username: string = '';
@@ -31,7 +32,6 @@ export class RegisterComponent {
         this.router.navigate(['/dashboard']);
       },
       error: (err) => {
-        // استخراج پیام خطا از پاسخ سرور
         const errorMsg = err.error?.message || err.error || 'An error occurred. Please try again.';
         this.errorMessage = `Registration failed: ${errorMsg}`;
         console.error('Register failed', err);
